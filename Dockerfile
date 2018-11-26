@@ -4,8 +4,8 @@ RUN mkdir /app
 
 WORKDIR /app
 
-ADD ./api/target/trackData-api-1.0.0-SNAPSHOT.jar /app
+ADD ./api/target/track-data-api-1.0.0-SNAPSHOT.jar /app
 
 EXPOSE 8080
 
-CMD java -jar trackData-api-1.0.0-SNAPSHOT.jar
+CMD java -jar track-data-api-1.0.0-SNAPSHOT.jar
