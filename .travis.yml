@@ -7,23 +7,15 @@ branches:
 services:
 - docker
 
-language: java
 dist: trusty
 
-jdk:
-- openjdk11
-
-cache:
-  directories:
-  - $HOME/.m2
-
 env:
-- DOCKER_IMAGE=strimr/track-data:1.0.0-SNAPSHOT
+- DOCKER_IMAGE=strimr/track-metadata
 
 script:
-- mvn clean package -U
-- docker build -t "$DOCKER_IMAGE" .
+- PROJECT_VERSION=`mvn help:evaluate -Dexpression=project.version 2>/dev/null | grep -Ev "(^\[|Download)"`
+- docker build -t "$DOCKER_IMAGE:$PROJECT_VERSION-$TRAVIS_BUILD_NUMBER" .
 
 after_success:
 - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-- docker push "$DOCKER_IMAGE"
+- docker push "$DOCKER_IMAGE:$PROJECT_VERSION-$TRAVIS_BUILD_NUMBER"

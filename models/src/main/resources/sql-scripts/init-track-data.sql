@@ -1,1 +1,0 @@
-INSERT INTO track_data (track_type, track_blob, track_metadata_id) VALUES ('test/test', '123', 1);

@@ -3,13 +3,13 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>track-data</artifactId>
+        <artifactId>track-metadata</artifactId>
         <groupId>si.strimr</groupId>
         <version>1.0.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
-    <artifactId>track-data-services</artifactId>
+    <artifactId>track-metadata-services</artifactId>
 
     <dependencies>
         <dependency>
@@ -28,6 +28,14 @@
             <groupId>com.kumuluz.ee</groupId>
             <artifactId>kumuluzee-json-p-jsonp</artifactId>
         </dependency>
+        <dependency>
+            <artifactId>kumuluzee-config-etcd</artifactId>
+            <groupId>com.kumuluz.ee.config</groupId>
+        </dependency>
+        <dependency>
+            <groupId>com.kumuluz.ee.discovery</groupId>
+            <artifactId>kumuluzee-discovery-etcd</artifactId>
+        </dependency>
 
         <dependency>
             <groupId>com.kumuluz.ee.rest</groupId>
@@ -36,7 +44,7 @@
 
         <dependency>
             <groupId>si.strimr</groupId>
-            <artifactId>track-data-models</artifactId>
+            <artifactId>track-metadata-models</artifactId>
         </dependency>
     </dependencies>
 
