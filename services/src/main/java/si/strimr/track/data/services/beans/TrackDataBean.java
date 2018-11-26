@@ -4,7 +4,7 @@ import com.kumuluz.ee.discovery.annotations.DiscoverService;
 import com.kumuluz.ee.rest.beans.QueryParameters;
 import com.kumuluz.ee.rest.utils.JPAUtils;
 import org.eclipse.microprofile.metrics.annotation.Timed;
-import si.strimr.track.data.models.dtos.Order;
+//import si.strimr.track.data.models.dtos.Order;
 import si.strimr.track.data.models.entities.TrackData;
 import si.strimr.track.data.services.configuration.AppProperties;
 
