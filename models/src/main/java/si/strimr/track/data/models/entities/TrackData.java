@@ -1,7 +1,15 @@
 package si.strimr.track.data.models.entities;
 
+<<<<<<< HEAD
 import javax.persistence.*;
 import java.sql.Blob;
+=======
+//import si.strimr.track.data.models.dtos.Order;
+
+import javax.persistence.*;
+import java.time.Instant;
+import java.util.List;
+>>>>>>> master
 
 @Entity(name = "track_data")
 public class TrackData {
@@ -17,7 +25,14 @@ public class TrackData {
     private Integer trackMetadataId;
 
     @Column(name = "track_blob")
+<<<<<<< HEAD
     private Blob trackBlob;
+=======
+    private String trackBlob;
+
+    @Column(name = "track_filename")
+    private String trackFilename;
+>>>>>>> master
 
     public Integer getId() {
         return id;
@@ -43,6 +58,7 @@ public class TrackData {
         this.trackMetadataId = trackMetadataId;
     }
 
+<<<<<<< HEAD
     public Blob getTrackBlob() {
         return trackBlob;
     }
@@ -51,4 +67,21 @@ public class TrackData {
         this.trackBlob = trackBlob;
     }
 
+=======
+    public String getTrackBlob() {
+        return trackBlob;
+    }
+
+    public void setTrackBlob(String trackBlob) {
+        this.trackBlob = trackBlob;
+    }
+
+    public String getTrackFilename() {
+        return trackFilename;
+    }
+
+    public void setTrackFilename(String trackFilename) {
+        this.trackFilename = trackFilename;
+    }
+>>>>>>> master
 }

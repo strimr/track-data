@@ -1,9 +1,17 @@
 package si.strimr.track.data.api.v1.resources;
 
+<<<<<<< HEAD
 import si.strimr.track.data.models.entities.TrackData;
 import si.strimr.track.data.services.TrackDataBean;
 
 import javax.enterprise.context.RequestScoped;
+=======
+import com.kumuluz.ee.logs.cdi.Log;
+import si.strimr.track.data.models.entities.TrackData;
+import si.strimr.track.data.services.beans.TrackDataBean;
+
+import javax.enterprise.context.ApplicationScoped;
+>>>>>>> master
 import javax.inject.Inject;
 import javax.ws.rs.*;
 import javax.ws.rs.core.Context;
@@ -12,9 +20,15 @@ import javax.ws.rs.core.Response;
 import javax.ws.rs.core.UriInfo;
 import java.util.List;
 
+<<<<<<< HEAD
 
 @RequestScoped
 @Path("/track-data")
+=======
+@Log
+@ApplicationScoped
+@Path("/customers")
+>>>>>>> master
 @Produces(MediaType.APPLICATION_JSON)
 @Consumes(MediaType.APPLICATION_JSON)
 public class TrackDataResource {

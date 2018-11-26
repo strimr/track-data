@@ -11,19 +11,19 @@ language: java
 dist: trusty
 
 jdk:
-- openjdk11
+- openjdk8
 
 cache:
   directories:
   - $HOME/.m2
 
 env:
-- DOCKER_IMAGE=strimr/track-data:1.0.0-SNAPSHOT
+  - DOCKER_IMAGE=strimr/track-data:1.0.0-SNAPSHOT
 
 script:
-- mvn clean package -U
-- docker build -t "$DOCKER_IMAGE" .
+  - mvn clean package -U
+  - docker build -t "$DOCKER_IMAGE" .
 
 after_success:
-- echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-- docker push "$DOCKER_IMAGE"
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push "$DOCKER_IMAGE"
