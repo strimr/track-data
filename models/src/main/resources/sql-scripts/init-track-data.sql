@@ -1,0 +1,3 @@
+INSERT INTO track_data (track_metadata_id, track_file_content, track_file_type, track_file_name) VALUES (1, 'to_be_content1', 'mp3', 'mymusic1');
+INSERT INTO track_data (track_metadata_id, track_file_content, track_file_type, track_file_name) VALUES (2, 'to_be_content2', 'mp3', 'mymusic2');
+INSERT INTO track_data (track_metadata_id, track_file_content, track_file_type, track_file_name) VALUES (3, 'to_be_content3', 'mp3', 'mymusic3');

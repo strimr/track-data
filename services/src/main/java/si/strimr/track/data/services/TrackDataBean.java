@@ -1,9 +1,9 @@
-package si.strimr.track.metadata.services;
+package si.strimr.track.data.services;
 
 import com.kumuluz.ee.rest.beans.QueryParameters;
 import com.kumuluz.ee.rest.utils.JPAUtils;
-import si.strimr.track.metadata.models.entities.TrackMetadata;
-import si.strimr.track.metadata.services.properties.AppProperties;
+import si.strimr.track.data.models.entities.TrackData;
+import si.strimr.track.data.services.properties.AppProperties;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;
@@ -16,20 +16,20 @@ import java.util.logging.Logger;
 
 
 @RequestScoped
-public class TrackMetadataBean {
+public class TrackDataBean {
 
-    private Logger log = Logger.getLogger(TrackMetadataBean.class.getName());
+    private Logger log = Logger.getLogger(TrackDataBean.class.getName());
 
     @Inject
     private EntityManager em;
 
     @Inject
-    private TrackMetadataBean trackMetadataBean;
+    private TrackDataBean trackDataBean;
 
     @Inject
     private AppProperties appProperties;
 
-    public List<TrackMetadata> getTrackMetadataFilter(UriInfo uriInfo) {
+    public List<TrackData> getTrackDataFilter(UriInfo uriInfo) {
 
         if(!appProperties.isApiFilteringEnabled())
             return Collections.emptyList();
@@ -37,61 +37,61 @@ public class TrackMetadataBean {
         QueryParameters queryParameters = QueryParameters.query(uriInfo.getRequestUri().getQuery()).defaultOffset(0)
                 .build();
 
-        return JPAUtils.queryEntities(em, TrackMetadata.class, queryParameters);
+        return JPAUtils.queryEntities(em, TrackData.class, queryParameters);
     }
 
-    public TrackMetadata getTrackMetadata(Integer trackId) {
+    public TrackData getTrackData(Integer trackId) {
 
-        TrackMetadata trackMetadata = em.find(TrackMetadata.class, trackId);
+        TrackData trackData = em.find(TrackData.class, trackId);
 
-        if (trackMetadata == null) {
+        if (trackData == null) {
             throw new NotFoundException();
         }
 
-        return trackMetadata;
+        return trackData;
     }
 
-    public TrackMetadata createTrackMetadata(TrackMetadata trackMetadata) {
+    public TrackData createTrackData(TrackData trackData) {
 
         try {
             beginTx();
-            em.persist(trackMetadata);
+            em.persist(trackData);
             commitTx();
         } catch (Exception e) {
             rollbackTx();
         }
 
-        return trackMetadata;
+        return trackData;
     }
 
-    public TrackMetadata putTrackMetadata(String trackId, TrackMetadata trackMetadata) {
+    public TrackData putTrackData(String trackId, TrackData trackData) {
 
-        TrackMetadata trackMetadata1 = em.find(TrackMetadata.class, trackId);
+        TrackData trackData1 = em.find(TrackData.class, trackId);
 
-        if (trackMetadata1 == null) {
+        if (trackData1 == null) {
             return null;
         }
 
         try {
             beginTx();
-            trackMetadata.setId(trackMetadata1.getId());
-            trackMetadata = em.merge(trackMetadata);
+            trackData.setId(trackData1.getId());
+            trackData = em.merge(trackData);
             commitTx();
         } catch (Exception e) {
             rollbackTx();
         }
 
-        return trackMetadata;
+        return trackData;
     }
 
-    public boolean deleteTrackMetadata(String trackId) {
+    public boolean deleteTrackData(String trackId) {
 
-        TrackMetadata trackMetadata = em.find(TrackMetadata.class, trackId);
+        TrackData trackData = em.find(TrackData.class, trackId);
 
-        if (trackMetadata != null) {
+        if (trackData != null) {
             try {
                 beginTx();
-                em.remove(trackMetadata);
+                em.remove(trackData);
                 commitTx();
             } catch (Exception e) {
                 rollbackTx();

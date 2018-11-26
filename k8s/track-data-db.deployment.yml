@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: track-metadata-db-deployment
+  name: track-data-db-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: track-metadata-db
+      app: track-data-db
   template:
     metadata:
       labels:
-        app: track-metadata-db
+        app: track-data-db
     spec:
       containers:
-        - name: track-metadata-db
+        - name: track-data-db
           image: postgres:10.5
           ports:
             - containerPort: 5432
@@ -23,17 +23,17 @@ spec:
             - name: POSTGRES_PASSWORD
               value: postgres
             - name: POSTGRES_DB
-              value: track_metadata
+              value: track_data
 
 ---
 
 apiVersion: v1
 kind: Service
 metadata:
-  name: track-metadata-db
+  name: track-data-db
 spec:
   type: NodePort
   ports:
     - port: 5432
   selector:
-    app: track-metadata-db
+    app: track-data-db

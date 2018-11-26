@@ -1,4 +1,4 @@
-package si.strimr.track.metadata.services.producers;
+package si.strimr.track.data.services.producers;
 
 import javax.enterprise.context.RequestScoped;
 import javax.enterprise.inject.Disposes;
@@ -9,7 +9,7 @@ import javax.persistence.PersistenceUnit;
 
 public class PersistenceProducer {
 
-    @PersistenceUnit(unitName = "track-metadata-jpa")
+    @PersistenceUnit(unitName = "track-data-jpa")
     private EntityManagerFactory emf;
 
     @Produces

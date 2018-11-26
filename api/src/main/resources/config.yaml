@@ -1,5 +1,5 @@
 kumuluzee:
-  name: rso-track-metadata
+  name: rso-track-data
   env:
     name: dev
   version: 1.0.0
@@ -8,8 +8,9 @@ kumuluzee:
     http:
       port: 8080
   datasources:
-    - jndi-name: jdbc/TrackMetadataDS
-      connection-url: jdbc:postgresql://localhost:5432/track_metadata
+    - jndi-name: jdbc/TrackDataDS
+      connection-url: jdbc:postgresql://192.168.99.100:5432/track_data
+#      localhost or 192.168.99.100
       username: dbuser
       password: postgres
       max-pool-size: 20

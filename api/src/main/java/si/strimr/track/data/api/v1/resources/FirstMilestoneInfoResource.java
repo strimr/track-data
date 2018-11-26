@@ -1,7 +1,7 @@
-package si.strimr.track.metadata.api.v1.resources;
+package si.strimr.track.data.api.v1.resources;
 
 
-import si.strimr.track.metadata.services.properties.AppProperties;
+import si.strimr.track.data.services.properties.AppProperties;
 
 import javax.enterprise.context.RequestScoped;
 import javax.inject.Inject;

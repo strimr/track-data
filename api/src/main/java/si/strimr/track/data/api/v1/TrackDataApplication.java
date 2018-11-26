@@ -1,4 +1,4 @@
-package si.strimr.track.metadata.api.v1;
+package si.strimr.track.data.api.v1;
 
 //import io.swagger.annotations.FirstMilestoneInfo;
 //import io.swagger.annotations.SwaggerDefinition;
@@ -9,5 +9,5 @@ import javax.ws.rs.core.Application;
 
 @RegisterService
 @ApplicationPath("/v1")
-public class TrackMetadataApplication extends Application {
+public class TrackDataApplication extends Application {
 }

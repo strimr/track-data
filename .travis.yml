@@ -10,7 +10,7 @@ services:
 dist: trusty
 
 env:
-- DOCKER_IMAGE=strimr/track-metadata
+- DOCKER_IMAGE=strimr/track-data
 
 script:
 - PROJECT_VERSION=`mvn help:evaluate -Dexpression=project.version 2>/dev/null | grep -Ev "(^\[|Download)"`

@@ -1,20 +1,20 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: track-metadata-deployment
+  name: track-data-deployment
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: track-metadata
+      app: track-data
   template:
     metadata:
       labels:
-        app: track-metadata
+        app: track-data
     spec:
       containers:
-        - image: strimr/track-metadata:0.9
-          name: track-metadata
+        - image: strimr/track-data:0.9
+          name: track-data
           env:
             - name: KUMULUZEE_DISCOVERY_ETCD_HOSTS
               value: http://etcd:2379
@@ -23,7 +23,7 @@ spec:
             - name: KUMULUZEE_SERVER_BASEURL
               value: http://35.240.79.227:8080
             - name: KUMULUZEE_DATASOURCES0_CONNECTIONURL
-              value: jdbc:postgresql://postgres:5432/track_metadata
+              value: jdbc:postgresql://postgres:5432/track_data
             - name: KUMULUZEE_DATASOURCES0_USERNAME
               value: dbuser
             - name: KUMULUZEE_DATASOURCES0_PASSWORD
@@ -38,7 +38,7 @@ spec:
 apiVersion: v1
 kind: Service
 metadata:
-  name: track-metadata
+  name: track-data
 spec:
   type: LoadBalancer
   ports:
@@ -46,4 +46,4 @@ spec:
       protocol: TCP
       targetPort: 8080
   selector:
-    app: track-metadata
+    app: track-data

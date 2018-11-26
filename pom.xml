@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>si.strimr</groupId>
-    <artifactId>track-metadata</artifactId>
+    <artifactId>track-data</artifactId>
     <version>1.0.0-SNAPSHOT</version>
 
     <packaging>pom</packaging>
@@ -65,17 +65,17 @@
 
             <dependency>
                 <groupId>si.strimr</groupId>
-                <artifactId>track-metadata-api</artifactId>
+                <artifactId>track-data-api</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>si.strimr</groupId>
-                <artifactId>track-metadata-models</artifactId>
+                <artifactId>track-data-models</artifactId>
                 <version>${project.version}</version>
             </dependency>
             <dependency>
                 <groupId>si.strimr</groupId>
-                <artifactId>track-metadata-services</artifactId>
+                <artifactId>track-data-services</artifactId>
                 <version>${project.version}</version>
             </dependency>
         </dependencies>

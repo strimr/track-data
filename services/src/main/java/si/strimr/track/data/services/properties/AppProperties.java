@@ -1,4 +1,4 @@
-package si.strimr.track.metadata.services.properties;
+package si.strimr.track.data.services.properties;
 
 import com.kumuluz.ee.configuration.cdi.ConfigBundle;
 import com.kumuluz.ee.configuration.cdi.ConfigValue;
