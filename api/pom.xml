@@ -14,19 +14,14 @@
     <dependencies>
         <dependency>
             <groupId>com.kumuluz.ee</groupId>
-<<<<<<< HEAD
-=======
             <artifactId>kumuluzee-core</artifactId>
         </dependency>
         <dependency>
             <groupId>com.kumuluz.ee</groupId>
->>>>>>> master
             <artifactId>kumuluzee-servlet-jetty</artifactId>
         </dependency>
 
         <dependency>
-<<<<<<< HEAD
-=======
             <artifactId>kumuluzee-logs-log4j2</artifactId>
             <groupId>com.kumuluz.ee.logs</groupId>
         </dependency>
@@ -36,7 +31,6 @@
         </dependency>
 
         <dependency>
->>>>>>> master
             <groupId>si.strimr</groupId>
             <artifactId>track-data-services</artifactId>
         </dependency>

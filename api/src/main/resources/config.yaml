@@ -1,9 +1,5 @@
 kumuluzee:
-<<<<<<< HEAD
-  name: rso-trackData
-=======
   name: track-data
->>>>>>> master
   env:
     name: dev
   version: 1.0.0
@@ -14,15 +10,6 @@ kumuluzee:
   datasources:
     - jndi-name: jdbc/TrackDataDS
       connection-url: jdbc:postgresql://192.168.99.100:5432/track_data
-<<<<<<< HEAD
-      username: postgres
-      password:
-      max-pool-size: 20
-rest-properties:
-  external-services:
-    order-service:
-      enabled: true
-=======
 #      daj nazaj na 192.168.99.100, ko ne poganjas z docker-compose
 #      connection-url: jdbc:postgresql://sl-eu-gb-p00.dblayer.com:15468/compose
       username: postgres
@@ -67,4 +54,3 @@ app-properties:
   external-services:
     enabled: false
   healthy: true
->>>>>>> master
