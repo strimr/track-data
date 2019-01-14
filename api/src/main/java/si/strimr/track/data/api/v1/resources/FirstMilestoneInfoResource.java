@@ -34,16 +34,13 @@ public class FirstMilestoneInfoResource {
                         .add(appProperties.getEndpointMm()))
                 .add("github", Json.createArrayBuilder()
                         .add("https://github.com/strimr/track-data")
-                        .add("https://github.com/strimr/track-metadata")
-                        .add("https://github.com/strimr/track-player"))
+                        .add("https://github.com/strimr/track-metadata"))
                 .add("travis", Json.createArrayBuilder()
                         .add("https://travis-ci.org/strimr/track-data")
-                        .add("https://travis-ci.org/strimr/track-metadata")
-                        .add("https://travis-ci.org/strimr/track-player"))
+                        .add("https://travis-ci.org/strimr/track-metadata"))
                 .add("dockerhub", Json.createArrayBuilder()
                         .add("https://hub.docker.com/r/strimr/track-data")
-                        .add("https://hub.docker.com/r/strimr/track-metadata")
-                        .add("https://hub.docker.com/r/strimr/track-player"))
+                        .add("https://hub.docker.com/r/strimr/track-metadata"))
                 .build();
 
         return Response.ok(json.toString()).build();
