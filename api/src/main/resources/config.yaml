@@ -14,6 +14,13 @@ kumuluzee:
       username: dbuser
       password: postgres
       max-pool-size: 20
+
+  health:
+    checks:
+      data-source-health-check:
+        jndi-name: jdbc/TrackDataDS
+      etcd-health-check:
+        connection-url: http://etcd:2379/health
   config:
     etcd:
       hosts: http://etcd:2379
