@@ -33,7 +33,9 @@ public class TrackDataResource {
     public Response getTrackDataFiltered() {
 
         List<TrackData> trackData;
+
         trackData = trackDataBean.getTrackDataFilter(uriInfo);
+
         return Response.status(Response.Status.OK).entity(trackData).build();
     }
 
