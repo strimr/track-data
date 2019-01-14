@@ -14,6 +14,10 @@ env:
 
 script:
 - PROJECT_VERSION=`mvn help:evaluate -Dexpression=project.version 2>/dev/null | grep -Ev "(^\[|Download)"`
+- echo $DOCKER_IMAGE
+- echo $PROJECT_VERSION
+- echo $TRAVIS_BUILD_NUMBER
+- echo "$DOCKER_IMAGE:$PROJECT_VERSION-$TRAVIS_BUILD_NUMBER"
 - docker build -t "$DOCKER_IMAGE:$PROJECT_VERSION-$TRAVIS_BUILD_NUMBER" .
 
 after_success:
