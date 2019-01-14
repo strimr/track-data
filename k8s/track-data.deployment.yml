@@ -13,7 +13,7 @@ spec:
         app: track-data
     spec:
       containers:
-        - image: strimr/track-data:1.0.0-SNAPSHOT-14
+        - image: strimr/track-data:1.0.0-SNAPSHOT-17
           name: track-data
           env:
             - name: KUMULUZEE_DISCOVERY_CLUSTER
