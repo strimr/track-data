@@ -52,7 +52,6 @@ public class TrackDataBean {
     }
 
     public TrackData createTrackData(TrackData trackData) {
-
         try {
             beginTx();
             em.persist(trackData);
