@@ -13,8 +13,7 @@ env:
 - DOCKER_IMAGE=strimr/track-data
 
 script:
-#- PROJECT_VERSION=`mvn help:evaluate -Dexpression=project.version 2>/dev/null | grep -Ev "(^\[|Download)"`
-- PROJECT_VERSION=1.0.0-SNAPSHOT
+- PROJECT_VERSION=`mvn help:evaluate -Dexpression=project.version 2>/dev/null | grep -Ev "(^\[|Download)"`
 - docker build -t "$DOCKER_IMAGE:$PROJECT_VERSION-$TRAVIS_BUILD_NUMBER" .
 
 after_success:
