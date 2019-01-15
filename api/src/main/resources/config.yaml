@@ -23,10 +23,10 @@ kumuluzee:
         connection-url: http://etcd:2379/health
   config:
     etcd:
-      hosts: http://etcd:2379
+      hosts: http://159.122.187.192:30774
   discovery:
     etcd:
-      hosts: http://etcd:2379
+      hosts: http://159.122.187.192:30774
 
 app-properties:
   api:
